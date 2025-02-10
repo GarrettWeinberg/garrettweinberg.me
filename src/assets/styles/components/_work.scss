@@ -1,0 +1,23 @@
+.section-work {
+  h2 {
+    @extend .mb-5;
+  }
+
+  .job {
+    .job-company {
+      @extend .mb-2;
+    }
+
+    .job-dates {
+      @extend .mb-2;
+    }
+
+    .job-description {
+      @extend .mt-4;
+    }
+  }
+
+  hr {
+    @extend .my-5;
+  }
+}

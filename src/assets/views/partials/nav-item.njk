@@ -1,6 +1,6 @@
-<div class="navigation-item {{ dropdown }}">
+<li class="nav-item">
   <a
-    class="navigation-link {{ active }} {{ dropdownToggle }}"
+    class="nav-link {{ active }}"
     href="{{ itemUrl }}"
     {{ currentAttribute | safe }}
     {{ target }}
@@ -9,12 +9,4 @@
   >
     {{ item.text }}
   </a>
-
-  {# {% if hasSubmenu %}
-    <div class="dropdown-menu">
-      {% for subitem in item.submenuitems %}
-        <a class="dropdown-item{% if subitem.url | lower == page.url | lower %} active{% endif %}" href="{{ subitem.url }}">{{ subitem.text | safe }}</a>
-      {% endfor %}
-    </div>
-  {% endif %} #}
-</div>
+</li>

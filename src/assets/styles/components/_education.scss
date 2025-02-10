@@ -1,0 +1,30 @@
+.section-education {
+  h2 {
+    @extend .mb-5;
+  }
+
+  .education {
+    .education-school {
+      @extend .mb-2;
+    }
+
+    .education-dates {
+      @extend .mb-2;
+    }
+
+    .list-group {
+      @extend .mt-4;
+      .list-group-item {
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: $spacer;
+
+        svg {
+          height: 32px;
+          width: 32px;
+        }
+      }
+    }
+  }
+}

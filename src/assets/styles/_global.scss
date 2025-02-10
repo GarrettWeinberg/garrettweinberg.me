@@ -1,0 +1,58 @@
+h1 {
+  font-family: "Cabin Condensed";
+  text-transform: uppercase;
+  color: $secondary;
+  font-size: $spacer * 4;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: $spacer * 6;
+  }
+}
+
+h2 {
+  font-family: "Cabin Condensed";
+  text-transform: uppercase;
+  color: $secondary;
+  font-size: $spacer * 2.5;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: $spacer * 4;
+  }
+}
+
+.lead {
+  font-size: $spacer * 1.25;
+  margin-bottom: 0;
+}
+
+a {
+  color: $dark;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    text-decoration: underline;
+    color: $primary;
+  }
+}
+
+.content-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: $spacer * 10;
+  padding-bottom: $spacer * 10;
+}
+
+.main-wrapper {
+  @include media-breakpoint-up(lg) {
+    padding-left: 300px;
+  }
+}

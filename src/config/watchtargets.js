@@ -1,7 +1,7 @@
 /**
  * Add Eleventy watch targets here
  * https://www.11ty.dev/docs/watch-serve/
-*/
+ */
 
 export default {
   /**
@@ -11,5 +11,7 @@ export default {
     let config = "./src/assets";
 
     eleventyConfig.addWatchTarget(config);
-  }
-}
+    eleventyConfig.addWatchTarget("./src/assets/views/");
+    eleventyConfig.addWatchTarget("./src/content/");
+  },
+};

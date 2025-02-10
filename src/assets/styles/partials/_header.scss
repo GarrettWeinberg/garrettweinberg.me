@@ -1,0 +1,16 @@
+.page-header {
+  @extend .d-lg-none;
+
+  .navbar {
+    background-color: $primary;
+    z-index: 9999;
+
+    .navbar-brand {
+      color: $light;
+    }
+  }
+
+  .offcanvas {
+    width: 100%;
+  }
+}

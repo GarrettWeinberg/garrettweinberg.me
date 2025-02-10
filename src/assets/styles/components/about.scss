@@ -1,0 +1,15 @@
+.section-about {
+  .location {
+    // font-family: "Cabin Condensed";
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: $spacer * 1.125;
+    color: $dark;
+    margin-top: $spacer * 0.5;
+    margin-bottom: 0;
+  }
+
+  .bio {
+    @extend .mt-5;
+  }
+}

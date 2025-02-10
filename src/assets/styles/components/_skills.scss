@@ -1,0 +1,25 @@
+.section-skills {
+  h2 {
+    @extend .mb-5;
+  }
+
+  .skills-list {
+    .list-group {
+      @extend .mt-4;
+      .list-group-item {
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: $spacer;
+
+        svg {
+          height: 32px;
+          width: 32px;
+        }
+      }
+    }
+  }
+  hr {
+    @extend .my-5;
+  }
+}

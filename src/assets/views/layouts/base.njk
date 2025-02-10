@@ -10,14 +10,21 @@
     {# Stylesheet #}
     <link rel="stylesheet" href="{{ '/assets/styles/styles.css' | url }}"/>
 
-    {# Favicon #}
-    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+      {# Favicon #}
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/site.webmanifest">
+    <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
     {# metagen plugin output #}
     {% metagen
-      title = title or metadata.title,
-      url = env.siteUrl + page.url
-     %}
+      title = seoTitle,
+      desc = seoDescription,
+      url = site.siteUrl + page.url
+    %}
 
     {# If ELEVENTY_ENV environmental variable isn't set to "production", hide this page from search engines #}
     {% if ( index == false) %}
@@ -29,25 +36,26 @@
     {# Skip to content link #}
     <a class="visually-hidden" href="#main">Skip to content</a>
 
-    {# Site header with navigation #}
-    <header>
-      {% include "partials/navigation.njk" %}
-    </header>
+  
 
     {# Main content #}
     <main id="main" tabindex="-1">
-      <header id="page-header">
-        <h1>
-          {{ title | safe }}
-        </h1>
-      </header>
-      {{ content | safe }}
+      {% include "partials/header.njk" %}
+    
+      <div class="sidebar d-none d-lg-flex">
+        {% include "partials/sidebar.njk" %}
+      </div>
+      <div class="main-wrapper">
+        <div class="container">
+          <div data-bs-spy="scroll" data-bs-target="#sidebar-nav" data-bs-smooth-scroll="true" tabindex="0">
+
+            {{ content | safe }}
+          </div>
+        </div>
+      </div>
     </main>
 
-    {# Site footer with copyright #}
-    <footer id="footer">
-      {% year %} &copy; {{ site.siteName }}
-    </footer>
+    
 
     {# Script bundle #}
     <script src="{{ '/assets/scripts/main.js' | url }}"></script>
